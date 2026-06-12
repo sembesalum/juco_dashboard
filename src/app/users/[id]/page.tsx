@@ -131,7 +131,7 @@ export default function UserDetailPage() {
             {fullName || detail.email}
           </h2>
           <p className="mt-1 text-xs text-slate-400">
-            {detail.role} • {detail.email}
+            {detail.role === "MONITOR" ? "CR" : detail.role} • {detail.email}
             {detail.registration_number
               ? ` • ${detail.registration_number}`
               : ""}

@@ -55,7 +55,7 @@ export default function UsersPage() {
         <div>
           <h2 className="text-lg font-semibold text-slate-50">Users</h2>
           <p className="mt-1 text-xs text-slate-400">
-            View and manage all lecturers, class representatives and admins.
+            View and manage all lecturers, CRs and admins.
           </p>
         </div>
         <Link
@@ -76,7 +76,7 @@ export default function UsersPage() {
           >
             <option value="ALL">All</option>
             <option value="LECTURER">Lecturer</option>
-            <option value="MONITOR">Class Rep</option>
+            <option value="MONITOR">CR</option>
             <option value="ADMIN">Admin</option>
           </select>
         </div>
@@ -140,7 +140,7 @@ export default function UsersPage() {
                   <td className="px-3 py-2 text-slate-300">{user.email}</td>
                   <td className="px-3 py-2">
                     <span className="inline-flex rounded-full bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-200">
-                      {user.role}
+                      {user.role === "MONITOR" ? "CR" : user.role}
                     </span>
                   </td>
                   <td className="px-3 py-2 text-slate-400">

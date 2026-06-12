@@ -89,7 +89,18 @@ export async function apiFetch<T>(
   options: RequestInit = {},
   token?: string
 ): Promise<T> {
-  const res = await fetch(`${API_BASE_URL}${path}`, {
+  // Ensure trailing slash for Django
+  let normalizedPath = path;
+  if (path.includes("?")) {
+    const [base, query] = path.split("?");
+    if (!base.endsWith("/")) {
+      normalizedPath = `${base}/?${query}`;
+    }
+  } else if (!path.endsWith("/")) {
+    normalizedPath = `${path}/`;
+  }
+
+  const res = await fetch(`${API_BASE_URL}${normalizedPath}`, {
     ...options,
     headers: {
       "Content-Type": "application/json",

@@ -15,6 +15,7 @@ interface AdminAuthResponse {
 
 export default function RegisterPage() {
   const router = useRouter();
+  const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +31,7 @@ export default function RegisterPage() {
       const res = await apiFetch<AdminAuthResponse>("/auth/admin/register", {
         method: "POST",
         body: JSON.stringify({
+          username,
           first_name: firstName,
           last_name: lastName,
           email,
@@ -55,6 +57,15 @@ export default function RegisterPage() {
           This account will be able to manage lecturers, class reps and schedules.
         </p>
         <form onSubmit={handleSubmit} className="mt-4 space-y-4 text-xs">
+          <div className="space-y-1">
+            <label className="block text-slate-300">Username</label>
+            <input
+              className="w-full rounded-md border border-slate-700 bg-slate-900 px-2 py-1.5 text-xs text-slate-100"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
           <div className="grid gap-3 grid-cols-2">
             <div className="space-y-1">
               <label className="block text-slate-300">First name</label>

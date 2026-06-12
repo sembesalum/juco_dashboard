@@ -90,7 +90,7 @@ export default function Home() {
 
       <div className="grid gap-4 md:grid-cols-3">
         <StatCard title="Lecturers" value={lecturerCount} loading={loading} />
-        <StatCard title="Class Representatives" value={crCount} loading={loading} />
+        <StatCard title="CRs" value={crCount} loading={loading} />
         <StatCard title="Admins" value={adminCount} loading={loading} />
       </div>
 

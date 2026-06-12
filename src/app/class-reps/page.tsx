@@ -56,7 +56,7 @@ export default function ClassRepsTimetablesPage() {
     <div className="space-y-6">
       <div>
         <h2 className="text-lg font-semibold text-slate-50">
-          Class representatives & timetables
+          CRs & timetables
         </h2>
         <p className="mt-1 text-xs text-slate-400">
           Every CR account and the timetable entries they created for lecturers.
@@ -64,13 +64,13 @@ export default function ClassRepsTimetablesPage() {
       </div>
 
       {loading && (
-        <p className="text-xs text-slate-400">Loading class representatives…</p>
+        <p className="text-xs text-slate-400">Loading CRs…</p>
       )}
       {!loading && error && (
         <p className="text-xs text-red-400">{error}</p>
       )}
       {!loading && !error && rows.length === 0 && (
-        <p className="text-xs text-slate-500">No class representatives found.</p>
+        <p className="text-xs text-slate-500">No CRs found.</p>
       )}
 
       <div className="space-y-4">

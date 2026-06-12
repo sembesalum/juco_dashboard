@@ -68,7 +68,7 @@ export default function NewUserPage() {
       <div>
         <h2 className="text-lg font-semibold text-slate-50">New User</h2>
         <p className="mt-1 text-xs text-slate-400">
-          Register a new lecturer, class representative, or admin.
+          Register a new lecturer, CR, or admin.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default function NewUserPage() {
               onChange={(e) => setRole(e.target.value as UserRole)}
             >
               <option value="LECTURER">Lecturer</option>
-              <option value="MONITOR">Class Representative</option>
+              <option value="MONITOR">CR</option>
               <option value="ADMIN">Admin</option>
             </select>
           </div>
